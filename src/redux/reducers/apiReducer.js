@@ -17,6 +17,13 @@ export const apiReducer = (state = initialState, action) => {
                 users:action.payload,
                 error:''
             } 
+
+            case 'FETCH_USERS_PAGINATION_SUCCESS' :
+                return {
+                    loading:false,
+                    users:[...state.users, ...action.payload],
+                    error:''
+                } 
         case 'FETCH_USERS_FAILURE' :
                 return {
                     loading:false,
